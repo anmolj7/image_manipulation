@@ -6,7 +6,7 @@ import os
 def resize_img(fPath=None):
     if not fPath:
         fPath = input("Enter the file's path: ")
-    base_height = 300
+    base_height = 400
     img = Image.open(fPath)
     h_percent = (base_height / float(img.size[1]))
     w_size = int((float(img.size[0]) * float(h_percent)))
