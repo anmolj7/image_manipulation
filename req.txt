@@ -1,0 +1,2 @@
+Pillow==6.2.1
+pyfiglet==0.8.post1
