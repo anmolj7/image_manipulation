@@ -6,11 +6,12 @@ import os
 def resize_img(fPath=None):
     if not fPath:
         fPath = input("Enter the file's path: ")
-    base_height = 400
+    base_len = 400
     img = Image.open(fPath)
-    h_percent = (base_height / float(img.size[1]))
-    w_size = int((float(img.size[0]) * float(h_percent)))
-    img = img.resize((w_size, base_height), Image.ANTIALIAS)
+    temp = max(img.size)
+    percent = base_len/float(temp)
+    temp = [int(x*percent) for x in img.size]
+    img = img.resize(temp, Image.ANTIALIAS)
     print()
     try:
         os.makedirs(os.path.join(os.path.split(fPath)[0], 'Edited'))
